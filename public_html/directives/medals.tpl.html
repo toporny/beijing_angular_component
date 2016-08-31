@@ -1,0 +1,16 @@
+  <table class="table table-hover" ng-if="$ctrl.httpStatus == 1">
+  <tr>
+    <th><span class="sort" title="click to sort">COUNTRY</span></th>
+    <th><span class="sort" title="click to sort">GOLD MEDALS</span></th>
+    <th><span class="sort" title="click to sort">SILVER MEDALS</span></th>
+    <th><span class="sort" title="click to sort">BRONZE MEDALS</span></th>
+  </tr>
+  <tr>
+    <td>USA</td>
+    <td>10</td>
+    <td>8</td>
+    <td>1</td>
+  </tr>
+  </table>
+
+	<pre ng-if="$ctrl.httpStatus == -1" class="bg-danger">{{$ctrl.errorDescription}}</pre>

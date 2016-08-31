@@ -1,0 +1,10 @@
+{
+  "name": "rsgyc-forms form with parlsy-validation and stripe",
+  "dependencies": {
+    "angular": "1.5.*",
+    "angular-translate": "2.11.*",
+    "bootstrap": "3.1.*",
+    "angular-bootstrap": "0.14.3",
+    "country-codes":"https://github.com/adamoliver/Country-Flags-ISO-3.git"
+  }
+}
