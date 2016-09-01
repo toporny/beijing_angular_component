@@ -1,27 +1,20 @@
 (function () {
-    var componentName = 'medalStats',
-        templateUrl = 'directives/medals.tpl.html';
 
     angular.module('challengeApp')
-        .directive(componentName, component)
-        .controller(componentName, medalCtrl);
-
-    // for unit testing: $controller('medal') === new instance of 'medalCtrl'
+        .directive('medalStats', component)
 
     function component() {
         return {
-            scope: {
-            },
+            scope: {},
             controller: medalCtrl,
             controllerAs: '$ctrl',
-            bindToController: true,
-            templateUrl: templateUrl
+            templateUrl: 'directives/medals.tpl.html'
         };
     }
 
-    medalCtrl.$inject = ['$http', 'customCommunication'];
+    medalCtrl.$inject = ['$http', 'customCommunication', 'jsonEndpoint'];
 
-    function medalCtrl($http, customCommunication) {
+    function medalCtrl($http, customCommunication, jsonEndpoint) {
         var $ctrl = this;
         $ctrl.init = init;
         $ctrl.sortChange = sortChange;
@@ -39,7 +32,7 @@
           $ctrl.sortby = 'gold';
           $ctrl.reverse = true;
           
-          customCommunication.getJsonData()
+          customCommunication.getJsonData(jsonEndpoint)
           .then(function (response) {
             $ctrl.medalData = response;
             $ctrl.httpStatus = 1;

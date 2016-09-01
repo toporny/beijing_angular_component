@@ -3,9 +3,9 @@
         .module('challengeApp')
         .factory('customCommunication', customCommunication);
 
-    customCommunication.$inject = ['$q', '$http', 'jsonEndpoint', 'country_codes'];
+    customCommunication.$inject = ['$q', '$http', 'country_codes'];
 
-    function customCommunication($q, $http, jsonEndpoint, country_codes) {
+    function customCommunication($q, $http, country_codes) {
         
         // interface
 
@@ -17,8 +17,8 @@
 
         // functions
 
-        function getJsonData(command) {
-          return $http.get(jsonEndpoint).then(function(response) {
+        function getJsonData(path) {
+          return $http.get(path).then(function(response) {
             if (typeof response.data === "object") {
               aCountriesArray = [];
 
@@ -34,15 +34,13 @@
               
               for (i=0; i<aCountriesArray.length; i++) {
                 
-                console.log(aCountriesArray[i]);
-                //console.log(country_codes[aCountriesArray[i]]);
                 oCountries[aCountriesArray[i]] = {
                   country_code: aCountriesArray[i],
                   country_name: country_codes[aCountriesArray[i]]['state'],
                   flag: country_codes[aCountriesArray[i]]['flag'],
-                  gold:0,
-                  silver:0,
-                  bronze:0
+                  gold:   0,
+                  silver: 0,
+                  bronze: 0
                 }
               }
 
