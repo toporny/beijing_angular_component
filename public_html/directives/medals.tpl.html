@@ -1,16 +1,21 @@
-  <table class="table table-hover" ng-if="$ctrl.httpStatus == 1">
+<table class="medals-table table table-hover" ng-if="$ctrl.httpStatus == 1">
   <tr>
-    <th><span class="sort" title="click to sort">COUNTRY</span></th>
-    <th><span class="sort" title="click to sort">GOLD MEDALS</span></th>
-    <th><span class="sort" title="click to sort">SILVER MEDALS</span></th>
-    <th><span class="sort" title="click to sort">BRONZE MEDALS</span></th>
+    <th ng-click="$ctrl.sortChange('country_name')" ><span class="sort" title="click to sort">COUNTRY</span><span class="sortorder" ng-show="$ctrl.sortby === 'country_name'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('gold')" ><span class="sort" title="click to sort">GOLD MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'gold'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('silver')"><span class="sort" title="click to sort">SILVER MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'silver'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('bronze')"><span class="sort" title="click to sort">BRONZE MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'bronze'" ng-class="{reverse: $ctrl.reverse}"></span></th>
   </tr>
-  <tr>
-    <td>USA</td>
-    <td>10</td>
-    <td>8</td>
-    <td>1</td>
-  </tr>
-  </table>
 
-	<pre ng-if="$ctrl.httpStatus == -1" class="bg-danger">{{$ctrl.errorDescription}}</pre>
+  <tr ng-repeat="item in $ctrl.medalData | orderBy:$ctrl.sortby:$ctrl.reverse">
+    <td><img src="img/flags/bower_components/country-codes/gif/{{item.flag}}.gif">
+      {{item.country_name}}
+     </td>
+    <td>{{item.gold}} </td>
+    <td>{{item.silver}} </td>
+    <td>{{item.bronze}} </td>
+  </tr>
+</table>
+
+<pre ng-if="$ctrl.httpStatus == -1" class="bg-danger">Error with getting data.</pre>
+
+<pre ng-if="$ctrl.httpStatus == 0" class="bg-warning">loading data...</pre>
