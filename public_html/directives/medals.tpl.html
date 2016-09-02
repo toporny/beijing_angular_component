@@ -8,7 +8,7 @@
   </tr>
 
   <tr ng-repeat="item in $ctrl.medalData | orderBy:$ctrl.sortby:$ctrl.reverse">
-    <td><img src="img/flags/bower_components/country-codes/gif/{{item.flag}}.gif">
+    <td>{{$index + 1}}. <img src="img/flags/bower_components/country-codes/gif/{{item.flag}}.gif">
       {{item.country_name}}
      </td>
     <td><span class="minheight">{{item.gold}}</span> <span class="gold-bkg" style="width:{{4*item.gold}}px;"></span></td>
