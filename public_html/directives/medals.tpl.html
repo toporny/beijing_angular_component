@@ -4,15 +4,17 @@
     <th ng-click="$ctrl.sortChange('gold')" ><span class="sort" title="click to sort">GOLD MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'gold'" ng-class="{reverse: $ctrl.reverse}"></span></th>
     <th ng-click="$ctrl.sortChange('silver')"><span class="sort" title="click to sort">SILVER MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'silver'" ng-class="{reverse: $ctrl.reverse}"></span></th>
     <th ng-click="$ctrl.sortChange('bronze')"><span class="sort" title="click to sort">BRONZE MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'bronze'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('all_medals')"><span class="sort" title="click to sort">ALL MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'all_medals'" ng-class="{reverse: $ctrl.reverse}"></span></th>
   </tr>
 
   <tr ng-repeat="item in $ctrl.medalData | orderBy:$ctrl.sortby:$ctrl.reverse">
     <td><img src="img/flags/bower_components/country-codes/gif/{{item.flag}}.gif">
       {{item.country_name}}
      </td>
-    <td>{{item.gold}} </td>
-    <td>{{item.silver}} </td>
-    <td>{{item.bronze}} </td>
+    <td><span class="minheight">{{item.gold}}</span> <span class="gold-bkg" style="width:{{4*item.gold}}px;"></span></td>
+    <td><span class="minheight">{{item.silver}} </span><span class="silver-bkg" style="width:{{4*item.silver}}px;"></span></td>
+    <td><span class="minheight">{{item.bronze}} </span><span class="bronze-bkg" style="width:{{4*item.bronze}}px;"></span></td>
+    <td><span class="minheight">{{item.all_medals}} </span><span class="all-medals-bkg" style="width:{{4*item.all_medals}}px;"></span></td>
   </tr>
 </table>
 

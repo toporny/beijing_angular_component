@@ -40,7 +40,8 @@
               flag: country_codes[aCountriesArray[i]]['flag'],
               gold:   0,
               silver: 0,
-              bronze: 0
+              bronze: 0,
+              all_medals: 0
             }
           }
 
@@ -54,6 +55,10 @@
               case 'Bronze': oCountries[responseData[i].country].bronze++;
               break;
             }
+             oCountries[responseData[i].country].all_medals = 
+               oCountries[responseData[i].country].gold + 
+               oCountries[responseData[i].country].silver + 
+               oCountries[responseData[i].country].bronze;
           }
 
           // prepare return array
