@@ -8,6 +8,7 @@ angular component for show and sort medals
 $ npm install
 $ npm update
 $ bower update
+$ grunt
 $ node server.js
 
 ```
