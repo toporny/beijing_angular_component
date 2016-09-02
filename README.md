@@ -12,6 +12,15 @@ $ grunt
 $ node server.js
 
 ```
+
+### Testing
+
+```sh
+$ karma start
+
+```
+
+
 working wersion:
 
 See [http://dokuwiki.alltic.home.pl/challenge/](http://dokuwiki.alltic.home.pl/challenge/)
