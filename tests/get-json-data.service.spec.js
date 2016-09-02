@@ -1,61 +1,30 @@
-// Be descriptive with titles here. The describe and it titles combined read like a sentence.
-describe('TESTING factory', function() {
+(function() {
+   describe('customCommunication service', function() {
+ 
+      // Load the challengeApp module, which contains the directive
+      beforeEach(module('challengeApp'));
 
-	beforeEach(module('challengeApp'));
+      beforeEach(inject(function(_customCommunication_) {
+         customCommunication = _customCommunication_;
+      }));
 
-	var $customCommunication;
-	var $httpBackend;
-
-   beforeEach(inject(function($injector) {
-     // Set up the mock http service responses
-     $httpBackend = $injector.get('$httpBackend');
-
-     // authRequestHandler = $httpBackend.when('GET', '/auth.py')
-     //                        .respond({userId: 'userX'}, {'A-Token': 'xxx'});
-     
-     $customCommunication = $injector.get('customCommunication');
-   }));
+      it('should customCommunication be defined', function () {
+         expect(customCommunication).toBeDefined();
+      });
 
 
+     it('should has 3 records after optimization', function () {
+      var jsonData = [
+         {"athlete": "KOGO, Micah","country": "KEN","sex": "Men","event": "10000m","medal": "Bronze"},
+         {"athlete": "BEKELE, Kenenisa","country": "ETH","sex": "Men","event": "10000m","medal": "Gold"},
+         {"athlete": "SIHINE, Sileshi","country": "ETH","sex": "Men","event": "10000m","medal": "Silver"},
+         {"athlete": "FLANAGAN, Shalane","country": "USA","sex": "Women","event": "10000m","medal": "Bronze"},
+         {"athlete": "DIBABA, Tirunesh","country": "ETH","sex": "Women","event": "10000m","medal": "Gold"}
+      ];
+      expect(customCommunication.makeFuncySort(jsonData).length).toBe(3);
+     });
+
+  });
+})();
 
 
-	// inject(function($injector) {
-	// 	customCommunication = $injector.get('customCommunication');
-	// });
-
-	// it('customCommunication test', function() {
-	// 	$customCommunication.getJsonData('tests/test.json');
-	// 	// An intentionally failing test. No code within expect() will never equal 4.
-	// 	//expect($customCommunication.getJsonData('tests/test.json')).toEqual('123');
-	// });
-
-
-	// it('should contain a medalStats',
-	// 	inject(function($medalStats') {
-	// 	expect('medalStats').not.to.equal(null);
-	// }));
-
-
-
-
-    // beforeEach(function (done) {
-    //     module('challengeApp');
-    //     inject(function ($injector) {
-    //         $httpBackend = $injector.get('$httpBackend');
-    //         medalStats = $injector.get('medalStats');
-    //     });
-    //     // Loading fixtures
-    //     // $.when(
-    //     //     $.getJSON('base/test/mock/test_resultset.json', function (data) { testResultSet = data; }),
-    //     //     $.getJSON('base/test/mock/test_other_data.json', function (data) { otherTestData = data; })
-    //     // ).then(done);
-    // });
-
-
-	it('something', function() {
-
-		// An intentionally failing test. No code within expect() will never equal 4.
-		expect(2+2).toEqual(4);
-	});
-
-});

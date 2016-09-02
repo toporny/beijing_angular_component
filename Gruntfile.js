@@ -32,12 +32,14 @@ grunt.initConfig({
 			// includes files within path
 			{expand: false, src: ['bower_components/bootstrap/dist/css/bootstrap.css'], dest: 'public_html/css/bootstrap.css', filter: 'isFile'},
 			{expand: false, src: ['bower_components/angular/angular.js'], dest: 'public_html/js/angular.js', filter: 'isFile'},
-			{expand: false, src: ['public_html/index.html'], dest: 'build/index.html', filter: 'isFile'},
+			{expand: false, src: ['public_html/index_prod.html'], dest: 'build/index.html', filter: 'isFile'},
+			{expand: false, src: ['public_html/js/angular.js'], dest: 'build/angular.js', filter: 'isFile'},
 			{expand: true, src: ['bower_components/country-codes/gif/*'], dest: 'public_html/img/flags/', filter: 'isFile'},
 			{expand: true, cwd: 'public_html/js/', src: ['*.min.js'], dest: 'build/js'},
 		],
 	  },
 	},
+
     
     uglify: {
     	options: {
@@ -50,11 +52,10 @@ grunt.initConfig({
           expand: false,
           cwd: '',
           src: [
-            'public_html/forms/*.js',
+            'public_html/directives/*.js',
 			'public_html/services/*.js',
-			'public_html/controllers/*.js',
           ],
-          dest: 'build/custom.min.js'
+          dest: 'build/js.js'
         }]
       },
     },
