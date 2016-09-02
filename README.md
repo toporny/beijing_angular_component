@@ -12,3 +12,6 @@ $ grunt
 $ node server.js
 
 ```
+working wersion:
+
+See [http://dokuwiki.alltic.home.pl/challenge/](http://dokuwiki.alltic.home.pl/challenge/)
