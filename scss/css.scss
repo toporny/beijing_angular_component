@@ -15,3 +15,28 @@
 .table > tfoot > tr > td {
 	padding:2px;
 }
+
+span.all-medals-bkg {
+	background: url("../img/all.png");
+	display: inline-block;
+	height:10px; 	
+}
+span.bronze-bkg {
+	background-color: #d06a3d;
+	display: inline-block;
+	height:10px; 	
+}
+span.silver-bkg {
+	background-color: #b9b9b9;
+	display: inline-block;
+	height:10px; 	
+}
+span.gold-bkg {
+	background-color: #f5a623;
+	display: inline-block;
+	height:10px; 	
+}
+span.minheight {
+	min-width:17px;
+	display: inline-block;
+}
