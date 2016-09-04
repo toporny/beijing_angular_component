@@ -1,10 +1,10 @@
 <table class="medals-table table table-hover" ng-if="$ctrl.httpStatus == 1">
   <tr>
     <th ng-click="$ctrl.sortChange('country_name')" ><span class="sort" title="click to sort">COUNTRY</span><span class="sortorder" ng-show="$ctrl.sortby === 'country_name'" ng-class="{reverse: $ctrl.reverse}"></span></th>
-    <th ng-click="$ctrl.sortChange('gold')" ><span class="sort" title="click to sort">GOLD MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'gold'" ng-class="{reverse: $ctrl.reverse}"></span></th>
-    <th ng-click="$ctrl.sortChange('silver')"><span class="sort" title="click to sort">SILVER MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'silver'" ng-class="{reverse: $ctrl.reverse}"></span></th>
-    <th ng-click="$ctrl.sortChange('bronze')"><span class="sort" title="click to sort">BRONZE MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'bronze'" ng-class="{reverse: $ctrl.reverse}"></span></th>
-    <th ng-click="$ctrl.sortChange('all_medals')"><span class="sort" title="click to sort">ALL MEDALS</span><span class="sortorder" ng-show="$ctrl.sortby === 'all_medals'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('gold')" ><span class="sort" title="click to sort"><img src="img/ic_medal-small-gold_1x.png"></span><span class="sortorder" ng-show="$ctrl.sortby === 'gold'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('silver')"><span class="sort" title="click to sort"><img src="img/ic_medal-small-silver_1x.png"></span><span class="sortorder" ng-show="$ctrl.sortby === 'silver'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('bronze')"><span class="sort" title="click to sort"><img src="img/ic_medal-small-bronze_1x.png"></span><span class="sortorder" ng-show="$ctrl.sortby === 'bronze'" ng-class="{reverse: $ctrl.reverse}"></span></th>
+    <th ng-click="$ctrl.sortChange('all_medals')"><span class="sort" title="click to sort"><img src="img/ic_medal-small-total_1x.png"></span><span class="sortorder" ng-show="$ctrl.sortby === 'all_medals'" ng-class="{reverse: $ctrl.reverse}"></span></th>
   </tr>
 
   <tr ng-repeat="item in $ctrl.medalData | orderBy:$ctrl.sortby:$ctrl.reverse">
