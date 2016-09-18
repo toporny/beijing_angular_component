@@ -27,4 +27,4 @@ source data:
 
 working version:
 
-[http://dokuwiki.alltic.home.pl/challenge/](http://dokuwiki.alltic.home.pl/challenge/)
+[http://dokuwiki.alltic.home.pl/challenge/beijing/](http://dokuwiki.alltic.home.pl/challenge/beijing)
