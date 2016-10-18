@@ -33,7 +33,6 @@
             oCountries = {};
 
             for (i = 0; i < aCountriesArray.length; i++) {
-
                 oCountries[aCountriesArray[i]] = {
                     country_code: aCountriesArray[i],
                     country_name: country_codes[aCountriesArray[i]]['state'],
@@ -80,7 +79,6 @@
                 if (typeof response.data === "object") {
                     aReturn = makeFuncySort(response.data);
                     return aReturn;
-
                 } else {
                     return $q.reject(response.data);
                 }
