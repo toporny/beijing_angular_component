@@ -1,6 +1,6 @@
 # task challenge
 
-angular component for show and sort medals 
+angular component for show all athletic medalists from the 2008 Beijing Olympics.
 
 ### Installation
 
@@ -10,7 +10,6 @@ $ npm update
 $ bower update
 $ grunt
 $ node server.js
-
 ```
 
 ### Testing
